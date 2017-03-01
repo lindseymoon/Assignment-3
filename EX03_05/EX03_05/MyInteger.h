@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -37,7 +38,9 @@ public:
 		for (int i = 2; i < value; i++)
 		{
 			if (value % i != 0)
-				return true;
+			{
+				return true; //this number is prime
+			}
 		}
 	}
 
@@ -57,21 +60,17 @@ public:
 		return I.isPrime;
 	}
 
-	const bool Equals(int)
+	const bool Equals(int) {}
+
+	const bool Equals(const MyInteger&) {}
+
+	static int parseInt(const string& s)
 	{
-
+		stringstream ss(s);
+		int i;
+		ss >> i;
+		return i;
 	}
-
-	const bool Equals(const MyInteger&)
-	{
-
-	}
-
-	static int parseInt(const string&)
-	{
-
-	}
-
 
 };
 
